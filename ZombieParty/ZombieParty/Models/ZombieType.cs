@@ -13,8 +13,11 @@ namespace ZombieParty.Models
         public string TypeName { get; set; }
 
         [Range(2, 5, ErrorMessage = "{0} requires a value between {1} and {2}.")]
+        [Display(Name = "Point")]
         public int Point { get; set; }
+
         [ValidateNever]
+        [Display(Name = "Zombies")]
         public virtual List<Zombie>? Zombies { get; set; }
     }
 }

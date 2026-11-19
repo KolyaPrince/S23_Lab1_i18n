@@ -9,17 +9,22 @@ namespace ZombieParty.Models
         public int Id { get; set; }
 
         [StringLength(20, MinimumLength = 5)]
+        [Display(Name = "Name")]
         public string Name { get; set; }
 
         [StringLength(255)]
+        [Display(Name = "Short Desc")]
         public string ShortDesc { get; set; }
 
         [Range(1, 20, ErrorMessage = "{0} requires a value between {1} and {2}.")]
+        [Display(Name = "Point")]
         public int Point { get; set; }
 
+        [Display(Name = "Force")]
         public int Force { get; set; }
 
         [ValidateNever]
+        [Display(Name = "Image")]
         public string Image { get; set; }
 
         // FACULTATIF on peut formellement identifier le champ lien
@@ -30,6 +35,7 @@ namespace ZombieParty.Models
         [ValidateNever] 
         public virtual ZombieType? ZombieType { get; set; }
 
+        [Display(Name = "Hunting Logs")]
         [ValidateNever] 
         public virtual List<HuntingLog> HuntingLogs { get; set; }
     }

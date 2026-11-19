@@ -6,30 +6,33 @@ namespace ZombieParty.Models
     {
         public int WeaponId { get; set; }
 
-        [Display(Name = "Weapon's Name")]
+        [Display(Name = "Name")]
         [StringLength(250, MinimumLength = 2)]
         public string Name { get; set; }
 
-        [Display(Name = "Weapon's Description")]
+        [Display(Name = "Description")]
         [MaxLength(2500)]
         [DataType(DataType.MultilineText)]
         public string? Description { get; set; }
 
         [Range(0, Double.MaxValue)]
+        [Display(Name = "Force")]
         public decimal Force { get; set; }
 
         [Range(0, 100000, ErrorMessage = "The {0} must be between {1} and {2}")]
         [DataType(DataType.Currency)]
+        [Display(Name = "Price")]
         public decimal Price { get; set; }
 
         [DataType(DataType.DateTime)]
         [Display(Name = "Created Date")]
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
-        [Display(Name = "Weapon's Image")]
+        [Display(Name = "Image")]
         [DataType(DataType.ImageUrl)]
         public string? Image { get; set; }
 
+        [Display(Name = "Qty")]
         public int Qty { get; set; }
 
         [Display(Name = "Qty Bought")]
